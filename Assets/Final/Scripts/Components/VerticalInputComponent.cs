@@ -1,0 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Entitas;
+using Entitas.CodeGeneration.Attributes;
+
+[Unique, Input]
+public class VerticalInputComponent : IComponent
+{
+    public float Value;
+}
