@@ -8,21 +8,48 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int PlayerDamaged = 0;
-    public const int PlayerHealed = 1;
-    public const int PlayerHealth = 2;
+    public const int Dampener = 0;
+    public const int Destroyed = 1;
+    public const int EnemyId = 2;
+    public const int Mover = 3;
+    public const int Moving = 4;
+    public const int Player = 5;
+    public const int PlayerDamaged = 6;
+    public const int PlayerHealed = 7;
+    public const int PlayerHealth = 8;
+    public const int Position = 9;
+    public const int Speed = 10;
+    public const int Stop = 11;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
+        "Dampener",
+        "Destroyed",
+        "EnemyId",
+        "Mover",
+        "Moving",
+        "Player",
         "PlayerDamaged",
         "PlayerHealed",
-        "PlayerHealth"
+        "PlayerHealth",
+        "Position",
+        "Speed",
+        "Stop"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(DampenerComponent),
+        typeof(DestroyedComponent),
+        typeof(EnemyIdComponent),
+        typeof(MoverComponent),
+        typeof(MovingComponent),
+        typeof(PlayerComponent),
         typeof(PlayerDamagedComponent),
         typeof(PlayerHealedComponent),
-        typeof(PlayerHealthComponent)
+        typeof(PlayerHealthComponent),
+        typeof(PositionComponent),
+        typeof(SpeedComponent),
+        typeof(StopComponent)
     };
 }

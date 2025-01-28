@@ -24,12 +24,12 @@ public class ListenForInputSystem : IExecuteSystem
         if (Input.GetMouseButtonDown(0))
         {
             InputEntity mouseClick = _context.CreateEntity();
-            mouseClick.AddMouseClicked(0);
+            //mouseClick.AddMouseClicked(0);
         }
         if (Input.GetMouseButtonUp(1))
         {
             InputEntity mouseClick = _context.CreateEntity();
-            mouseClick.AddMouseClicked(1);
+            //mouseClick.AddMouseClicked(1);
         }
     }
 }

@@ -6,37 +6,25 @@ using Entitas;
 
 public class MovementSystem : IExecuteSystem
 {
-    Contexts _contexts;
+    GameContext _gameContext;
+    private InputContext _inputContext;
 
     public MovementSystem(Contexts contexts)
     {
-        _contexts = contexts;
+        _gameContext = contexts.game;
+        _inputContext = contexts.input;
     }
     
     public void Execute()
     {
+
+        if (_gameContext.playerEntity == null) return;
+        GameEntity player = _gameContext.playerEntity;
         
-        GameEntity[] entities = _contexts.game.GetEntities
-        (GameMatcher.AllOf(GameMatcher.Position)
-            .AnyOf(GameMatcher.Mover, GameMatcher.Speed)
-            .NoneOf(GameMatcher.Stopped));
-        
-        InputEntity[] inputEntitiesHorizontal = _contexts.input.GetEntities(InputMatcher.HorizontalInput);
-        InputEntity inputEntityHorizontal = _contexts.input.horizontalInputEntity;
-        
-        foreach (GameEntity entity in entities)
-        {
-            Vector3 oldPosition = entity.position.Value;
-            Vector3 speed = Vector3.zero;
-            
-            if (entity.hasSpeed) speed += entity.speed.Value;
-            if (entity.hasMover) speed += entity.mover.Value;
-            
-            if (entity.hasBooster) speed *= (1 + entity.booster.Value);
-            if (entity.hasDampener) speed *= (1 - entity.dampener.Value);
-            
-            Vector3 newPosition = oldPosition + speed * Time.deltaTime;
-            entity.ReplacePosition(newPosition);
-        }
+        Vector2 input = _inputContext.playerInput.Value;
+        Vector3 displacement = new Vector3(input.x, 0, input.y) * (player.speed.Value * Time.deltaTime);
+        Vector3 newPosition = player.position.Value + displacement;
+
+        player.ReplacePosition(newPosition);
     }
 }
