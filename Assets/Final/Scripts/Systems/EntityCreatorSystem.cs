@@ -7,7 +7,7 @@ using Entitas;
 public class EntityCreatorSystem : IInitializeSystem
 {
     private GameContext _context;
-    private const float _speed = 10f;
+    private const float _speed = 5f;
     public EntityCreatorSystem(Contexts contexts)
     {
         _context = contexts.game;
@@ -19,5 +19,7 @@ public class EntityCreatorSystem : IInitializeSystem
         player.isPlayer = true;
         player.AddPosition(Vector3.zero);
         player.AddSpeed(_speed);
+        player.isSpawnPlayer = true;
+
     }
 }

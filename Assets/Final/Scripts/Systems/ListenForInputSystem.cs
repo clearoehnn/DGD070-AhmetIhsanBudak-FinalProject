@@ -16,8 +16,8 @@ public class ListenForInputSystem : IExecuteSystem
     }
     public void Execute()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _verticalInput = Input.GetAxis("Vertical");
+        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        _verticalInput = Input.GetAxisRaw("Vertical");
         
         _context.ReplaceHorizontalInput(_horizontalInput);
         _context.ReplaceVerticalInput(_verticalInput);

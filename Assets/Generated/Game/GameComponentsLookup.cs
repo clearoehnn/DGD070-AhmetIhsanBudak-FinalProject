@@ -18,10 +18,12 @@ public static class GameComponentsLookup {
     public const int PlayerHealed = 7;
     public const int PlayerHealth = 8;
     public const int Position = 9;
-    public const int Speed = 10;
-    public const int Stop = 11;
+    public const int SpawnPlayer = 10;
+    public const int Speed = 11;
+    public const int Stop = 12;
+    public const int View = 13;
 
-    public const int TotalComponents = 12;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "Dampener",
@@ -34,8 +36,10 @@ public static class GameComponentsLookup {
         "PlayerHealed",
         "PlayerHealth",
         "Position",
+        "SpawnPlayer",
         "Speed",
-        "Stop"
+        "Stop",
+        "View"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -49,7 +53,9 @@ public static class GameComponentsLookup {
         typeof(PlayerHealedComponent),
         typeof(PlayerHealthComponent),
         typeof(PositionComponent),
+        typeof(SpawnPlayerComponent),
         typeof(SpeedComponent),
-        typeof(StopComponent)
+        typeof(StopComponent),
+        typeof(ViewComponent)
     };
 }

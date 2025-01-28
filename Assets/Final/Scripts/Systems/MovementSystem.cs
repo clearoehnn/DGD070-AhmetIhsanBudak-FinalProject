@@ -21,6 +21,8 @@ public class MovementSystem : IExecuteSystem
         if (_gameContext.playerEntity == null) return;
         GameEntity player = _gameContext.playerEntity;
         
+        if(!player.hasPosition) return;
+        
         Vector2 input = _inputContext.playerInput.Value;
         Vector3 displacement = new Vector3(input.x, 0, input.y) * (player.speed.Value * Time.deltaTime);
         Vector3 newPosition = player.position.Value + displacement;
