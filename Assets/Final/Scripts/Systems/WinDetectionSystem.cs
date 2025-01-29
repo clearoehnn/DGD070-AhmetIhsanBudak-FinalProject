@@ -14,7 +14,7 @@ public class WinDetectionSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return null;
+        return context.CreateCollector(GameMatcher.AllPadsTriggered.Added());
     }
 
     protected override bool Filter(GameEntity entity)
@@ -24,6 +24,6 @@ public class WinDetectionSystem : ReactiveSystem<GameEntity>
 
     protected override void Execute(List<GameEntity> entities)
     {
-        
+        PrefabReference.Instance.wonText.SetActive(true);
     }
 }

@@ -12,6 +12,7 @@ public class PlayerControlFeature : Feature
     {
         //Add(new EntityCreatorSystem(contexts));
         Add(new MovePlayerSystem(contexts));
+        //Add(new DestroyPlayerSystem(contexts));
     }
 
     public sealed override Systems Add(ISystem system)

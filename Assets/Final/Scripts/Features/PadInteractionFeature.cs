@@ -14,7 +14,7 @@ public class PadInteractionFeature : Feature
 
         Add(new PadInitializationSystem(contexts));
         Add(new PadCountingSystem(contexts));
-        //Add(new WinDetectionSystem(contexts));
+        Add(new WinDetectionSystem(contexts));
     }
 
     public sealed override Systems Add(ISystem system)

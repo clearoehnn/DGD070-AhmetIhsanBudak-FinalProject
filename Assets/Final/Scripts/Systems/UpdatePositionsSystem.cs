@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,8 @@ public class UpdatePositionsSystem : ReactiveSystem<GameEntity>
     {
         foreach (GameEntity entity in entities)
         {
-            entity.view.Value.transform.position = entity.position.Value;
+            Vector3 position = entity.position.Value;
+            entity.view.Value.transform.position = position;
         }
     }
 }

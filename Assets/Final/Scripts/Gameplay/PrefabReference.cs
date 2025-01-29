@@ -7,6 +7,7 @@ public class PrefabReference : MonoBehaviour
 {
     public GameObject cubePrefab;
     public GameObject[] padReferences;
+    public GameObject wonText;
     public static PrefabReference Instance;
 
     private void Awake()
