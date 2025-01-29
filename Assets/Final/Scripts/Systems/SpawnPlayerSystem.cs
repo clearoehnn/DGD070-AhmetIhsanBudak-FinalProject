@@ -33,6 +33,7 @@ public class SpawnPlayerSystem : ReactiveSystem<GameEntity>
             
             entity.AddView(playerObject);
             playerObject.Link(entity);
+            PrefabReference.Instance.player = playerObject;
             
             entity.isSpawnPlayer = false;
         }

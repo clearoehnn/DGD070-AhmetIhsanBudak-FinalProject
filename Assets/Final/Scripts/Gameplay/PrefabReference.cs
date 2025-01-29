@@ -9,6 +9,7 @@ public class PrefabReference : MonoBehaviour
     public GameObject[] padReferences;
     public GameObject wonText;
     public static PrefabReference Instance;
+    public GameObject player;
 
     private void Awake()
     {
