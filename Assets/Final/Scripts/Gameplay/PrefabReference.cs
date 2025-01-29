@@ -6,6 +6,7 @@ using UnityEngine;
 public class PrefabReference : MonoBehaviour
 {
     public GameObject cubePrefab;
+    public GameObject[] padReferences;
     public static PrefabReference Instance;
 
     private void Awake()

@@ -8,29 +8,35 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int Dampener = 0;
-    public const int Destroyed = 1;
-    public const int EnemyId = 2;
-    public const int Mover = 3;
-    public const int Moving = 4;
-    public const int Player = 5;
-    public const int PlayerDamaged = 6;
-    public const int PlayerHealed = 7;
-    public const int PlayerHealth = 8;
-    public const int Position = 9;
-    public const int SpawnPlayer = 10;
-    public const int Speed = 11;
-    public const int Stop = 12;
-    public const int View = 13;
+    public const int AllPadsTriggered = 0;
+    public const int Dampener = 1;
+    public const int Destroyed = 2;
+    public const int EnemyId = 3;
+    public const int Mover = 4;
+    public const int Moving = 5;
+    public const int Pad = 6;
+    public const int PadTriggered = 7;
+    public const int Player = 8;
+    public const int PlayerDamaged = 9;
+    public const int PlayerHealed = 10;
+    public const int PlayerHealth = 11;
+    public const int Position = 12;
+    public const int SpawnPlayer = 13;
+    public const int Speed = 14;
+    public const int Stop = 15;
+    public const int View = 16;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
+        "AllPadsTriggered",
         "Dampener",
         "Destroyed",
         "EnemyId",
         "Mover",
         "Moving",
+        "Pad",
+        "PadTriggered",
         "Player",
         "PlayerDamaged",
         "PlayerHealed",
@@ -43,11 +49,14 @@ public static class GameComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(AllPadsTriggeredComponent),
         typeof(DampenerComponent),
         typeof(DestroyedComponent),
         typeof(EnemyIdComponent),
         typeof(MoverComponent),
         typeof(MovingComponent),
+        typeof(PadComponent),
+        typeof(PadTriggeredComponent),
         typeof(PlayerComponent),
         typeof(PlayerDamagedComponent),
         typeof(PlayerHealedComponent),
